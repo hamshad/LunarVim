@@ -2,7 +2,8 @@ return {
   leader = "space",
   reload_config_on_save = true,
   colorscheme = "lunar",
-  transparent_window = false,
+  -- transparent_window = false,
+  transparent_window = true,
   format_on_save = {
     ---@usage boolean: format on save (Default: false)
     enabled = false,
