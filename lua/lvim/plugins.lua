@@ -357,6 +357,16 @@ local core_plugins = {
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     event = { "FileReadPre", "BufReadPre", "User FileOpened" },
   },
+
+
+  -- Flutter plugin
+  {
+    "akinsho/flutter-tools.nvim",
+    dependencies = {
+      "stevearc/dressing.nvim", -- optional for vim.ui.select
+    },
+    config = true,
+  }
 }
 
 local default_snapshot_path = join_paths(get_lvim_base_dir(), "snapshots", "default.json")
