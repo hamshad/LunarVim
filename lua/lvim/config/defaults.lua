@@ -1,12 +1,13 @@
 return {
   leader = "space",
   reload_config_on_save = true,
-  colorscheme = "lunar",
+  -- colorscheme = "lunar",
+  colorscheme = "everest",
   -- transparent_window = false,
-  transparent_window = true,
+  transparent_window = false,
   format_on_save = {
     ---@usage boolean: format on save (Default: false)
-    enabled = false,
+    enabled = true,
     ---@usage pattern string pattern used for the autocommand (Default: '*')
     pattern = "*",
     ---@usage timeout number timeout in ms for the format request (Default: 1000)
