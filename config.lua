@@ -32,8 +32,8 @@ vim.opt.wrap = true
 vim.opt.scrolloff = 10
 
 -- Hamshads Key Maping
-vim.keymap.set('n', '<leader>o', 'o<Esc>')
-vim.keymap.set('n', '<leader>O', 'O<Esc>')
+vim.keymap.set('n', '<leader>o', 'o<esc>')
+vim.keymap.set('n', '<leader>O', 'O<esc>')
 vim.keymap.set('n', '<leader>d', '"_d')
 vim.keymap.set('v', '<leader>d', '"_d')
 vim.keymap.set('v', '<leader>p', '"_dP')

@@ -2,7 +2,7 @@ return {
   leader = "space",
   reload_config_on_save = true,
   -- colorscheme = "lunar",
-  colorscheme = "everest",
+  colorscheme = "everforest",
   -- transparent_window = false,
   transparent_window = false,
   format_on_save = {

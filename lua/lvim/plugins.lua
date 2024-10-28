@@ -1,6 +1,6 @@
 -- local require = require("lvim.utils.require").require
 local core_plugins = {
-  { "folke/lazy.nvim", tag = "stable" },
+  { "folke/lazy.nvim",              tag = "stable" },
   {
     "neovim/nvim-lspconfig",
     lazy = true,
@@ -21,7 +21,7 @@ local core_plugins = {
     dependencies = "mason.nvim",
   },
   { "tamago324/nlsp-settings.nvim", cmd = "LspSettings", lazy = true },
-  { "nvimtools/none-ls.nvim", lazy = true },
+  { "nvimtools/none-ls.nvim",       lazy = true },
   {
     "williamboman/mason.nvim",
     config = function()
@@ -49,6 +49,7 @@ local core_plugins = {
       -- directly inside the plugin declaration.
       vim.g.everforest_enable_italic = true
       vim.cmd.colorscheme('everforest')
+      vim.g.everforest_background = 'medium'
     end
   },
   {
@@ -56,7 +57,7 @@ local core_plugins = {
     lazy = lvim.colorscheme ~= "lunar",
   },
   { "Tastyep/structlog.nvim", lazy = true },
-  { "nvim-lua/plenary.nvim", cmd = { "PlenaryBustedFile", "PlenaryBustedDirectory" }, lazy = true },
+  { "nvim-lua/plenary.nvim",  cmd = { "PlenaryBustedFile", "PlenaryBustedDirectory" }, lazy = true },
   -- Telescope
   {
     "nvim-telescope/telescope.nvim",
@@ -87,10 +88,10 @@ local core_plugins = {
       "cmp-cmdline",
     },
   },
-  { "hrsh7th/cmp-nvim-lsp", lazy = true },
-  { "saadparwaiz1/cmp_luasnip", lazy = true },
-  { "hrsh7th/cmp-buffer", lazy = true },
-  { "hrsh7th/cmp-path", lazy = true },
+  { "hrsh7th/cmp-nvim-lsp",                     lazy = true },
+  { "saadparwaiz1/cmp_luasnip",                 lazy = true },
+  { "hrsh7th/cmp-buffer",                       lazy = true },
+  { "hrsh7th/cmp-path",                         lazy = true },
   {
     "hrsh7th/cmp-cmdline",
     lazy = true,
@@ -377,7 +378,7 @@ local core_plugins = {
       "stevearc/dressing.nvim", -- optional for vim.ui.select
     },
     config = true,
-  }
+  },
 }
 
 local default_snapshot_path = join_paths(get_lvim_base_dir(), "snapshots", "default.json")
