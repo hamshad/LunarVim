@@ -379,6 +379,12 @@ local core_plugins = {
     },
     config = true,
   },
+
+
+  -- Copilog
+  {
+    "github/copilot.vim",
+  }
 }
 
 local default_snapshot_path = join_paths(get_lvim_base_dir(), "snapshots", "default.json")
