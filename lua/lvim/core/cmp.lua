@@ -294,20 +294,20 @@ M.config = function()
           end
         end,
       },
-      ["<Tab>"] = cmp_mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_next_item()
-        elseif luasnip.expand_or_locally_jumpable() then
-          luasnip.expand_or_jump()
-        elseif jumpable(1) then
-          luasnip.jump(1)
-        elseif has_words_before() then
-          -- cmp.complete()
-          fallback()
-        else
-          fallback()
-        end
-      end, { "i", "s" }),
+      -- ["<Tab>"] = cmp_mapping(function(fallback)
+      --   if cmp.visible() then
+      --     cmp.select_next_item()
+      --   elseif luasnip.expand_or_locally_jumpable() then
+      --     luasnip.expand_or_jump()
+      --   elseif jumpable(1) then
+      --     luasnip.jump(1)
+      --   elseif has_words_before() then
+      --     -- cmp.complete()
+      --     fallback()
+      --   else
+      --     fallback()
+      --   end
+      -- end, { "i", "s" }),
       ["<S-Tab>"] = cmp_mapping(function(fallback)
         if cmp.visible() then
           cmp.select_prev_item()
