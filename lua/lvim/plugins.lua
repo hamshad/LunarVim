@@ -381,9 +381,17 @@ local core_plugins = {
   },
 
 
-  -- Copilog
+  -- Copilot
   {
     "github/copilot.vim",
+  },
+
+  -- MonkeyType
+  {
+    "nvzone/typr",
+    dependencies = "nvzone/volt",
+    opts = {},
+    cmd = { "Typr", "TyprStats" },
   }
 }
 
