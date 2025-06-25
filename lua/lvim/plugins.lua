@@ -443,6 +443,26 @@ local core_plugins = {
       --   If not available, we use `mini` as the fallback
       "rcarriga/nvim-notify",
     }
+  },
+
+  -- Session Persistence
+  {
+    "folke/persistence.nvim",
+    event = "BufReadPre", -- to restore session as early as possible
+    config = function()
+      require("persistence").setup({
+        dir = vim.fn.expand(vim.fn.stdpath("state") .. "/sessions/"),
+        options = { "buffers", "curdir", "tabpages", "winsize" },
+        pre_save = nil,
+      })
+    end,
+  },
+
+
+  -- TODO: remove later
+  -- Hackatime for Hackclub
+  {
+    'wakatime/vim-wakatime'
   }
 }
 

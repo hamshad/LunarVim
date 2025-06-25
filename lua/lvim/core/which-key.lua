@@ -325,6 +325,14 @@ M.config = function()
         name = "Treesitter",
         i = { ":TSConfigInfo<cr>", "Info" },
       },
+
+      -- Persistence WhichKey
+      S = {
+        name = "Session",
+        s = { [[<cmd>lua require("persistence").load()<cr>]], "Restore Session for current dir" },
+        l = { [[<cmd>lua require("persistence").load({ last = true })<cr>]], "Restore Last Session" },
+        d = { [[<cmd>lua require("persistence").stop()<cr>]], "Don't Save Current Session" },
+      },
     },
   }
 end
