@@ -2,7 +2,7 @@ local M = {}
 
 M.config = function()
   lvim.builtin.indentlines = {
-    active = true,
+    active = false,
     on_config_done = nil,
     options = {
       enabled = true,

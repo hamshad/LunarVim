@@ -4,34 +4,38 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
--- Enable powershell as your default shell
-vim.opt.shell = "powershell.exe"
-vim.opt.shellcmdflag =
-"-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+-- Use Zsh (or change to "/bin/bash" or your shell of choice)
+vim.opt.shell = "/bin/zsh"
+vim.opt.shellcmdflag = "-l -i -c" -- login + interactive
 vim.cmd [[
-		let &shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
-		let &shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
-		set shellquote= shellxquote=
-  ]]
+  let &shellredir = '2>&1 | tee %s'
+  let &shellpipe  = '2>&1 | tee %s'
+  set shellquote= shellxquote=
+]]
 
--- Set a compatible clipboard manager
-vim.g.clipboard = {
+-- macOS clipboard via pbcopy/pbpaste
+vim.g.clipboard               = {
   copy = {
-    ["+"] = "win32yank.exe -i --crlf",
-    ["*"] = "win32yank.exe -i --crlf",
+    ["+"] = "pbcopy",
+    ["*"] = "pbcopy",
   },
   paste = {
-    ["+"] = "win32yank.exe -o --lf",
-    ["*"] = "win32yank.exe -o --lf",
+    ["+"] = "pbpaste",
+    ["*"] = "pbpaste",
   },
+  cache_enabled = 0,
 }
 
--- Hamshads Options
-vim.opt.relativenumber = true
-vim.opt.wrap = true
-vim.opt.scrolloff = 10
+lvim.builtin.custom           = lvim.builtin.custom or {}
+lvim.builtin.custom.cmdheight = 0 -- Hide command line when not in use (Neovim 0.10+)
 
--- Hamshads Key Maping
+-- Hamshad’s options
+vim.opt.relativenumber        = true
+vim.opt.wrap                  = true
+vim.opt.tabstop               = 4
+vim.opt.scrolloff             = 15
+
+-- Hamshad’s key mappings
 vim.keymap.set('n', '<leader>o', 'o<esc>')
 vim.keymap.set('n', '<leader>O', 'O<esc>')
 vim.keymap.set('n', '<leader>d', '"_d')

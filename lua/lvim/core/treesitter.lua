@@ -27,9 +27,13 @@ function M.config()
       -- disable = { "c", "ruby" },  -- optional, list of language that will be disabled
     },
     highlight = {
-      enable = true, -- false will disable the whole extension
+      enable = false, -- false will disable the whole extension
       additional_vim_regex_highlighting = false,
       disable = function(lang, buf)
+        if lang == "go" and vim.fn.has "nvim-0.10" == 1 then
+          -- disable for go in nvim-0.10+ since it has native support
+          return true
+        end
         if vim.tbl_contains({ "latex" }, lang) then
           return true
         end
@@ -72,7 +76,7 @@ function M.config()
     playground = {
       enable = false,
       disable = {},
-      updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+      updatetime = 25,         -- Debounced time for highlighting nodes in the playground from source code
       persist_queries = false, -- Whether the query persists across vim sessions
       keybindings = {
         toggle_query_editor = "o",
@@ -89,7 +93,7 @@ function M.config()
     },
     rainbow = {
       enable = false,
-      extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
+      extended_mode = true,  -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
       max_file_lines = 1000, -- Do not enable for files with more than 1000 lines, int
     },
   }

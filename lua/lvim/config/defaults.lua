@@ -1,10 +1,10 @@
 return {
   leader = "space",
   reload_config_on_save = true,
-  -- colorscheme = "lunar",
-  colorscheme = "everforest",
-  -- transparent_window = false,
+  colorscheme = "lunar",
+  -- colorscheme = "everforest",
   transparent_window = false,
+  -- transparent_window = true,
   format_on_save = {
     ---@usage boolean: format on save (Default: false)
     enabled = true,
@@ -65,7 +65,7 @@ return {
       cmd = "lnav",
       layout_config = {
         ---@usage direction = 'vertical' | 'horizontal' | 'window' | 'float',
-        direction = "horizontal",
+        direction = "float",
         open_mapping = "",
         size = 40,
         float_opts = {},
